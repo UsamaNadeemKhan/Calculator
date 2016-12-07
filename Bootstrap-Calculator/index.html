@@ -1,0 +1,97 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Assignment2_Calculator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content>
+        <meta name="author" content>
+        <link href="css/bootstrap.min.css" rel="stylesheet"/>             
+		<script type="text/javascript">                          
+		function myfunction(x)             
+		{        
+			bsForm.result.value = bsForm.result.value + x;
+		}                         
+		function output()             
+		{                      
+			temp.value= eval(temp.value);                
+		}      
+		  
+		function isNumberKey(evt)
+       	{
+        	var charCode = (evt.which) ? evt.which : evt.keyCode;
+        	if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57))
+			{
+         		alert("Alphabets are not allowed");
+             	return false;
+			}
+        	return true;
+       	}
+		</script>                  
+		<style type="text/css">             
+		fieldset              
+		{             
+		margin: 70px auto auto auto;                
+		border     : 3px solid silver;                 
+		width      : 300px;                 
+		height     : auto;                 
+		padding    : 10px;   
+		text-align:center;
+		background-color:#e6edea;             
+		}     
+		.alert{
+			width:50% !important;
+			margin-top:15px;
+			text-align:center;
+		}
+		span{
+			font-size:24px; font-weight:bolder; text-align:center; margin-bottom:15px;
+		}
+		td input  
+		{ margin:5px 5px auto auto;  font-weight : bolder;  padding: 15px;  width: 65px;  }                                
+		  
+		</style>     
+	</head>     
+	<body style="align: center"> 
+    <div class="alert alert-danger col-xs-offset-3">
+    <a href="#"   aria-label="close"></a>
+    <strong>Alpha Numeric Not Allowed!</strong> 
+  </div>
+		<div class="container" >        
+			<fieldset>       
+            	<span>CALCULATOR</span> 
+				<form name="bsForm">
+				<table>                 
+					<tr>
+						<td><input class="btn btn-danger" type="reset" value="Clear"></td>                     
+						<td colspan="3"><input style=" font-size:22px ;" maxlength="15" pattern="\d*" class="form-control" type="text" name="result" placeholder="0" id="display" onkeypress="return isNumberKey(event)" /></td>                 
+					</tr>  
+					<tr>
+						<td><input type="button" class="btn btn-lg btn-success" value="+" id="add" onClick="myfunction('+');" ></td>                     
+						<td><input type="button" class="btn btn-lg btn-default" value="7" onClick="myfunction('7');"></td>                     
+						<td><input type="button" class="btn btn-lg btn-default" value="8" onClick="myfunction('8');"></td>                     
+						<td><input type="button" class="btn btn-lg btn-default" value="9" onClick="myfunction('9');"></td>                 
+					</tr>  
+					<tr>
+						<td><input class="btn btn-lg btn-success" type="button" value="-" id="sub" onClick="myfunction('-');" ></td>                     
+						<td><input type="button" class="btn btn-lg btn-default" value="4" onClick="myfunction('4');"></td>
+						<td><input type="button" class="btn btn-lg btn-default" value="5" onClick="myfunction('5');"></td>
+						<td><input type="button" class="btn btn-lg btn-default" value="6" onClick="myfunction('6');"></td>
+					</tr>  
+					<tr>
+						<td><input type="button" class="btn btn-lg btn-success" value="*" id="mul" onClick="myfunction('*');" ></td>                     
+						<td><input value="1" class="btn btn-lg btn-default" onClick="myfunction('1')"></td>
+						<td><input value="2" class="btn btn-lg btn-default" onClick="myfunction('2');"></td>
+						<td><input value="3" class="btn btn-lg btn-default" onClick="myfunction('3');"></td>
+					</tr>  
+					<tr>
+						<td><input class="btn btn-lg btn-success" value="/" id="div" onClick="myfunction('/');" ></td>                     
+						<td><input type="button" class="btn btn-lg btn-default" value="0" onClick="myfunction('0');"></td>
+						<td><input type="button" class="btn btn-lg btn-default" value="." onClick="myfunction('.');"></td>
+						<td><input type="button" class="btn btn-lg btn-info" value="=" onClick="result.value=eval(result.value)"></td>
+					</tr>
+				</table>
+				</form>
+			</fieldset>    
+		</div> 
+	</body> 
+</html>
